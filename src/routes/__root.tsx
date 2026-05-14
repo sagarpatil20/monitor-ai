@@ -72,10 +72,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Obsidian — LLM Eval & Monitoring" },
+      { title: "rapy-eval.ai — LLM Eval & Monitoring" },
       { name: "description", content: "Open-source LLM evaluation and observability dashboard with LLM-as-judge scoring." },
-      { name: "author", content: "Obsidian" },
-      { property: "og:title", content: "Obsidian — LLM Eval & Monitoring" },
+      { name: "author", content: "rapy-eval.ai" },
+      { property: "og:title", content: "rapy-eval.ai — LLM Eval & Monitoring" },
       { property: "og:description", content: "Open-source LLM evaluation and observability dashboard with LLM-as-judge scoring." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },

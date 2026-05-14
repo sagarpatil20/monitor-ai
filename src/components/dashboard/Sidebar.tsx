@@ -17,7 +17,7 @@ export function Sidebar() {
         <div className="size-6 rounded-sm bg-foreground flex items-center justify-center">
           <div className="size-2.5 rounded-[2px] bg-background" />
         </div>
-        <span className="text-sm font-semibold tracking-tight">obsidian</span>
+        <span className="text-sm font-semibold tracking-tight">rapy-eval.ai</span>
         <span className="ml-auto font-mono text-[10px] text-muted-foreground">v0.1</span>
       </div>
       <nav className="flex-1 p-3 space-y-0.5">

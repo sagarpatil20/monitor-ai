@@ -80,6 +80,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "rapy-eval.ai — LLM Eval & Monitoring" },
+      { name: "twitter:description", content: "Open-source LLM evaluation and observability dashboard with LLM-as-judge scoring." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/82827ee8-52da-4025-9ac5-ac51ce3b06d2/id-preview-b835880d--5fc8b842-1ffb-41b4-a188-bdb046aa9532.lovable.app-1778761437174.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/82827ee8-52da-4025-9ac5-ac51ce3b06d2/id-preview-b835880d--5fc8b842-1ffb-41b4-a188-bdb046aa9532.lovable.app-1778761437174.png" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },

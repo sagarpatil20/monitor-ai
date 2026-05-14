@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Sidebar } from "@/components/dashboard/Sidebar";
-import { Topbar } from "@/components/dashboard/Topbar";
+import { DashboardShell } from "@/components/dashboard/DashboardShell";
 import { StatCard } from "@/components/dashboard/StatCard";
 import { LiveTraces, useLiveTraces } from "@/components/dashboard/LiveTraces";
 import { TokenChart } from "@/components/dashboard/TokenChart";
@@ -10,6 +9,12 @@ import { AgentsList } from "@/components/dashboard/AgentsList";
 
 export const Route = createFileRoute("/")({
   component: Dashboard,
+  head: () => ({
+    meta: [
+      { title: "Overview — rapy-eval.ai" },
+      { name: "description", content: "Live LLM observability and evaluation overview." },
+    ],
+  }),
 });
 
 function Dashboard() {
@@ -37,83 +42,29 @@ function Dashboard() {
     Array.from({ length: 24 }, (_, i) => Math.sin(i / 2 + seed) + Math.random() * 0.4 + 1);
 
   return (
-    <div className="min-h-screen bg-background text-foreground bg-grid">
-      <div className="flex">
-        <Sidebar />
-        <div className="flex-1 min-w-0">
-          <Topbar />
-          <main className="p-6 space-y-6 max-w-[1600px]">
-            {/* Hero header */}
-            <div className="flex items-end justify-between flex-wrap gap-4">
-              <div>
-                <div className="font-mono text-[11px] uppercase tracking-wider text-muted-foreground mb-1.5">
-                  observability · evaluation · llm-as-judge
-                </div>
-                <h1 className="text-3xl font-semibold tracking-tight text-balance">
-                  Watch every prompt, score every response.
-                </h1>
-                <p className="mt-1.5 text-sm text-muted-foreground max-w-xl">
-                  Open-source dashboard for tracing, evaluating and monitoring agent runs in real time.
-                </p>
-              </div>
-              <div className="flex items-center gap-2 font-mono text-[11px]">
-                <span className="size-1.5 rounded-full bg-success pulse-dot" />
-                <span className="text-muted-foreground">streaming</span>
-                <span className="text-muted-foreground/50">·</span>
-                <span>{new Date().toUTCString().slice(17, 25)} UTC</span>
-              </div>
-            </div>
+    <DashboardShell
+      crumb="overview · observability · llm-as-judge"
+      title="Watch every prompt, score every response."
+      subtitle="Open-source dashboard for tracing, evaluating and monitoring agent runs in real time."
+    >
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <StatCard label="Requests" value={counters.requests.toLocaleString()} delta={4.2} spark={spark(1)} />
+        <StatCard label="Tokens processed" value={(counters.tokens / 1_000_000).toFixed(2)} unit="M" delta={2.8} spark={spark(2)} />
+        <StatCard label="Spend" value={`$${counters.cost.toFixed(2)}`} delta={-1.4} spark={spark(3)} />
+        <StatCard label="Judge pass rate" value={`${(counters.pass * 100).toFixed(1)}%`} delta={0.6} spark={spark(4)} />
+      </div>
 
-            {/* KPI strip */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-              <StatCard
-                label="Requests"
-                value={counters.requests.toLocaleString()}
-                delta={4.2}
-                spark={spark(1)}
-              />
-              <StatCard
-                label="Tokens processed"
-                value={(counters.tokens / 1_000_000).toFixed(2)}
-                unit="M"
-                delta={2.8}
-                spark={spark(2)}
-              />
-              <StatCard
-                label="Spend"
-                value={`$${counters.cost.toFixed(2)}`}
-                delta={-1.4}
-                spark={spark(3)}
-              />
-              <StatCard
-                label="Judge pass rate"
-                value={`${(counters.pass * 100).toFixed(1)}%`}
-                delta={0.6}
-                spark={spark(4)}
-              />
-            </div>
-
-            {/* Chart + Judge */}
-            <div className="grid grid-cols-1 xl:grid-cols-3 gap-4">
-              <div className="xl:col-span-2 space-y-4">
-                <TokenChart />
-                <AgentsList />
-              </div>
-              <div className="xl:col-span-1">
-                <JudgePanel />
-              </div>
-            </div>
-
-            {/* Live traces */}
-            <LiveTraces traces={traces} />
-
-            <footer className="pt-4 pb-8 flex items-center justify-between font-mono text-[11px] text-muted-foreground border-t border-border">
-              <span>rapy-eval.ai · open-source llm observability</span>
-              <span>p50 312ms · p95 1.4s · p99 2.8s</span>
-            </footer>
-          </main>
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-4">
+        <div className="xl:col-span-2 space-y-4">
+          <TokenChart />
+          <AgentsList />
+        </div>
+        <div className="xl:col-span-1">
+          <JudgePanel />
         </div>
       </div>
-    </div>
+
+      <LiveTraces traces={traces} />
+    </DashboardShell>
   );
 }

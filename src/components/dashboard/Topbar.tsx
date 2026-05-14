@@ -1,14 +1,19 @@
 import { Command, Search } from "lucide-react";
 
-export function Topbar() {
+export function Topbar({ crumb }: { crumb: string }) {
+  const parts = crumb.split("·").map((p) => p.trim()).filter(Boolean);
   return (
     <header className="h-14 border-b border-border flex items-center px-6 gap-4 bg-background/80 backdrop-blur sticky top-0 z-10">
       <div className="flex items-center gap-2 text-[13px] font-mono text-muted-foreground">
         <span>workspace</span>
         <span className="opacity-40">/</span>
         <span className="text-foreground">production</span>
-        <span className="opacity-40">/</span>
-        <span className="text-foreground">overview</span>
+        {parts.length > 0 && (
+          <>
+            <span className="opacity-40">/</span>
+            <span className="text-foreground">{parts[0]}</span>
+          </>
+        )}
       </div>
       <div className="ml-auto flex items-center gap-2">
         <div className="hidden md:flex items-center gap-2 h-9 px-3 rounded-md border border-border bg-card text-[13px] text-muted-foreground w-72">

@@ -40,7 +40,7 @@ export function DashboardShell({
             </div>
             {children}
             <footer className="pt-4 pb-8 flex items-center justify-between font-mono text-[11px] text-muted-foreground border-t border-border">
-              <span>rapy-eval.ai · open-source llm observability</span>
+              <span>Monitor AI | open-source LLM observability</span>
               <span>p50 312ms · p95 1.4s · p99 2.8s</span>
             </footer>
           </main>

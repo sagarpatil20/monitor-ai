@@ -6,7 +6,7 @@ export const Route = createFileRoute("/evaluations")({
   component: EvalsPage,
   head: () => ({
     meta: [
-      { title: "Evaluations — rapy-eval.ai" },
+      { title: "Evaluations - Monitor AI" },
       { name: "description", content: "Run and compare LLM evaluations." },
     ],
   }),
@@ -23,7 +23,7 @@ const runs = [
 function EvalsPage() {
   return (
     <DashboardShell
-      crumb="evaluations · runs"
+      crumb="evaluations / runs"
       title="Evaluations"
       subtitle="Batch evals against datasets, scored by your LLM judge."
       actions={

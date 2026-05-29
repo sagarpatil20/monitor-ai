@@ -7,7 +7,7 @@ export const Route = createFileRoute("/analytics")({
   component: AnalyticsPage,
   head: () => ({
     meta: [
-      { title: "Analytics — rapy-eval.ai" },
+      { title: "Analytics - Monitor AI" },
       { name: "description", content: "Cost, latency and quality analytics for your LLM stack." },
     ],
   }),
@@ -27,7 +27,7 @@ const breakdown = [
 function AnalyticsPage() {
   return (
     <DashboardShell
-      crumb="analytics · cost · latency"
+      crumb="analytics / cost / latency"
       title="Analytics"
       subtitle="Where every token, dollar and millisecond is going."
     >

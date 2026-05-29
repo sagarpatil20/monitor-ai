@@ -7,7 +7,7 @@ export const Route = createFileRoute("/traces")({
   component: TracesPage,
   head: () => ({
     meta: [
-      { title: "Live Traces — rapy-eval.ai" },
+      { title: "Live Traces - Monitor AI" },
       { name: "description", content: "Real-time agent and LLM call traces." },
     ],
   }),
@@ -17,7 +17,7 @@ function TracesPage() {
   const traces = useLiveTraces(12);
   return (
     <DashboardShell
-      crumb="traces · live stream"
+      crumb="traces / live stream"
       title="Live traces"
       subtitle="Every prompt, response, and tool call as it happens."
     >

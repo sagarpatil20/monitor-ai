@@ -6,7 +6,7 @@ export const Route = createFileRoute("/datasets")({
   component: DatasetsPage,
   head: () => ({
     meta: [
-      { title: "Datasets — rapy-eval.ai" },
+      { title: "Datasets - Monitor AI" },
       { name: "description", content: "Curate eval datasets for repeatable LLM testing." },
     ],
   }),
@@ -24,7 +24,7 @@ const datasets = [
 function DatasetsPage() {
   return (
     <DashboardShell
-      crumb="datasets · gold sets"
+      crumb="datasets / gold sets"
       title="Datasets"
       subtitle="Versioned ground-truth examples to test your LLMs against."
       actions={

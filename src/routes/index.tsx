@@ -11,7 +11,7 @@ export const Route = createFileRoute("/")({
   component: Dashboard,
   head: () => ({
     meta: [
-      { title: "Overview — rapy-eval.ai" },
+      { title: "Overview - Monitor AI" },
       { name: "description", content: "Live LLM observability and evaluation overview." },
     ],
   }),
@@ -43,7 +43,7 @@ function Dashboard() {
 
   return (
     <DashboardShell
-      crumb="overview · observability · llm-as-judge"
+      crumb="overview / observability / llm-as-judge"
       title="Watch every prompt, score every response."
       subtitle="Open-source dashboard for tracing, evaluating and monitoring agent runs in real time."
     >

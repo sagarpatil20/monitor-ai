@@ -6,7 +6,7 @@ export const Route = createFileRoute("/judge")({
   component: JudgePage,
   head: () => ({
     meta: [
-      { title: "Judge — rapy-eval.ai" },
+      { title: "Judge - Monitor AI" },
       { name: "description", content: "Configure your LLM-as-judge evaluator." },
     ],
   }),
@@ -24,9 +24,9 @@ const rubric = [
 function JudgePage() {
   return (
     <DashboardShell
-      crumb="judge · llm-as-a-judge"
+      crumb="judge / llm-as-a-judge"
       title="LLM as the judge."
-      subtitle="A second model scores every response against your rubric — automatic, deterministic, free."
+      subtitle="A second model scores every response against your rubric - automatic, deterministic, free."
     >
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-4">
         <div className="xl:col-span-2 rounded-lg border border-border bg-card overflow-hidden">
@@ -38,7 +38,7 @@ function JudgePage() {
             {rubric.map((r) => (
               <div key={r.name} className="px-5 py-4 flex items-start gap-4">
                 <div className="size-8 rounded-md border border-border bg-background flex items-center justify-center font-mono text-[11px] text-muted-foreground">
-                  0–1
+                  0-1
                 </div>
                 <div className="flex-1">
                   <div className="text-[13px] font-medium">{r.name}</div>

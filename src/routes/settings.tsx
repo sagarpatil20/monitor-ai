@@ -6,7 +6,7 @@ export const Route = createFileRoute("/settings")({
   component: SettingsPage,
   head: () => ({
     meta: [
-      { title: "Settings — rapy-eval.ai" },
+      { title: "Settings - Monitor AI" },
       { name: "description", content: "Workspace, judge and integration settings." },
     ],
   }),
@@ -17,8 +17,8 @@ const sections = [
     title: "Workspace",
     fields: [
       { label: "Name", value: "production" },
-      { label: "Slug", value: "rapy-eval/production", mono: true },
-      { label: "Plan", value: "Free · self-hosted" },
+      { label: "Slug", value: "monitor-ai/production", mono: true },
+      { label: "Plan", value: "Free / self-hosted" },
     ],
   },
   {
@@ -34,7 +34,7 @@ const sections = [
 function SettingsPage() {
   return (
     <DashboardShell
-      crumb="settings · workspace"
+      crumb="settings / workspace"
       title="Settings"
       subtitle="Configure your workspace, judge model and SDK keys."
     >
@@ -62,8 +62,8 @@ function SettingsPage() {
         </div>
         <div className="divide-y divide-border">
           {[
-            { name: "production", key: "rpy_live_8a91…f02c" },
-            { name: "staging", key: "rpy_test_2c14…91ab" },
+            { name: "production", key: "mon_live_8a91...f02c" },
+            { name: "staging", key: "mon_test_2c14...91ab" },
           ].map((k) => (
             <div key={k.name} className="px-5 py-4 flex items-center gap-4">
               <div className="flex-1">
@@ -84,10 +84,10 @@ function SettingsPage() {
       <div className="rounded-lg border border-border bg-card p-5">
         <div className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground mb-2">install</div>
         <pre className="font-mono text-[12px] bg-background border border-border rounded-md p-3 overflow-x-auto">
-{`pip install rapy-eval
-export RAPY_API_KEY=rpy_live_…
+{`pip install monitor-ai
+export MONITOR_API_KEY=mon_live_...
 
-from rapy_eval import trace
+from monitor_ai import trace
 @trace(agent="support-bot")
 def reply(prompt): ...`}
         </pre>

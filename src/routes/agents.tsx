@@ -7,8 +7,8 @@ export const Route = createFileRoute("/agents")({
   component: AgentsPage,
   head: () => ({
     meta: [
-      { title: "Agents — rapy-eval.ai" },
-      { name: "description", content: "All AI agents tracked by rapy-eval.ai." },
+      { title: "Agents - Monitor AI" },
+      { name: "description", content: "All AI agents tracked by Monitor AI." },
     ],
   }),
 });
@@ -19,7 +19,7 @@ const spark = (s: number) =>
 function AgentsPage() {
   return (
     <DashboardShell
-      crumb="agents · registry"
+      crumb="agents / registry"
       title="Agents"
       subtitle="Every deployed agent, scored and monitored continuously."
     >

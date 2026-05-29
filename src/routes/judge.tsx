@@ -6,7 +6,7 @@ export const Route = createFileRoute("/judge")({
   component: JudgePage,
   head: () => ({
     meta: [
-      { title: "Judge - Monitor AI" },
+      { title: "Judge - Dico Monitor" },
       { name: "description", content: "Configure your LLM-as-judge evaluator." },
     ],
   }),

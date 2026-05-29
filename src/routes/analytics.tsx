@@ -7,7 +7,7 @@ export const Route = createFileRoute("/analytics")({
   component: AnalyticsPage,
   head: () => ({
     meta: [
-      { title: "Analytics - Monitor AI" },
+      { title: "Analytics - Dico Monitor" },
       { name: "description", content: "Cost, latency and quality analytics for your LLM stack." },
     ],
   }),

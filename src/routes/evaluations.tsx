@@ -6,7 +6,7 @@ export const Route = createFileRoute("/evaluations")({
   component: EvalsPage,
   head: () => ({
     meta: [
-      { title: "Evaluations - Monitor AI" },
+      { title: "Evaluations - Dico Monitor" },
       { name: "description", content: "Run and compare LLM evaluations." },
     ],
   }),

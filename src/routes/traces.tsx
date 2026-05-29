@@ -7,7 +7,7 @@ export const Route = createFileRoute("/traces")({
   component: TracesPage,
   head: () => ({
     meta: [
-      { title: "Live Traces - Monitor AI" },
+      { title: "Live Traces - Dico Monitor" },
       { name: "description", content: "Real-time agent and LLM call traces." },
     ],
   }),

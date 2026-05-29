@@ -11,7 +11,7 @@ export const Route = createFileRoute("/")({
   component: Dashboard,
   head: () => ({
     meta: [
-      { title: "Overview - Monitor AI" },
+      { title: "Overview - Dico Monitor" },
       { name: "description", content: "Live LLM observability and evaluation overview." },
     ],
   }),

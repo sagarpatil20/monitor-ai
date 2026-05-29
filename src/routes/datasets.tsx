@@ -6,7 +6,7 @@ export const Route = createFileRoute("/datasets")({
   component: DatasetsPage,
   head: () => ({
     meta: [
-      { title: "Datasets - Monitor AI" },
+      { title: "Datasets - Dico Monitor" },
       { name: "description", content: "Curate eval datasets for repeatable LLM testing." },
     ],
   }),

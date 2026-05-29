@@ -37,7 +37,7 @@
 
 :root {
   --radius: 0.5rem;
-  /* Pure black/white minimalist dark theme */
+  /* Pure black/white minimalist dark theme (default) */
   --background: oklch(0.13 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.16 0 0);
@@ -62,9 +62,35 @@
   --grid-line: oklch(1 0 0 / 4%);
 }
 
+.light {
+  --background: oklch(0.98 0.005 240);
+  --foreground: oklch(0.12 0.01 240);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.12 0.01 240);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.12 0.01 240);
+  --primary: oklch(0.12 0.01 240);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.94 0.005 240);
+  --secondary-foreground: oklch(0.12 0.01 240);
+  --muted: oklch(0.94 0.005 240);
+  --muted-foreground: oklch(0.45 0.01 240);
+  --accent: oklch(0.90 0.01 240);
+  --accent-foreground: oklch(0.12 0.01 240);
+  --destructive: oklch(0.60 0.18 25);
+  --destructive-foreground: oklch(1 0 0);
+  --success: oklch(0.55 0.15 155);
+  --warning: oklch(0.65 0.14 85);
+  --border: oklch(0.12 0.01 240 / 8%);
+  --input: oklch(0.12 0.01 240 / 12%);
+  --ring: oklch(0.12 0.01 240 / 50%);
+  --grid-line: oklch(0.12 0.01 240 / 3%);
+}
+
 @layer base {
   * {
     border-color: var(--color-border);
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
   }
   html, body {
     background-color: var(--color-background);
@@ -106,5 +132,13 @@
     position: absolute; inset: 0;
     background: linear-gradient(90deg, transparent, oklch(1 0 0 / 6%), transparent);
     animation: shimmer-line 2.4s infinite;
+  }
+
+  @keyframes scale-in-center {
+    0% { transform: scale(0.96); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  .scale-in-center {
+    animation: scale-in-center 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 }

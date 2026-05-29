@@ -7,8 +7,8 @@ export const Route = createFileRoute("/agents")({
   component: AgentsPage,
   head: () => ({
     meta: [
-      { title: "Agents - Monitor AI" },
-      { name: "description", content: "All AI agents tracked by Monitor AI." },
+      { title: "Agents - Dico Monitor" },
+      { name: "description", content: "All AI agents tracked by Dico Monitor." },
     ],
   }),
 });
@@ -20,14 +20,14 @@ function AgentsPage() {
   return (
     <DashboardShell
       crumb="agents / registry"
-      title="Agents"
-      subtitle="Every deployed agent, scored and monitored continuously."
+      title="Agents Registry"
+      subtitle="A central directory of all company AI agents—both built and in-development—including creator tracking and run costs."
     >
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-        <StatCard label="Total agents" value="14" delta={2.1} spark={spark(1)} />
-        <StatCard label="Active 24h" value="9" delta={0.8} spark={spark(2)} />
-        <StatCard label="Avg score" value="0.87" delta={1.2} spark={spark(3)} />
-        <StatCard label="Failing" value="2" delta={-12.5} spark={spark(4)} />
+        <StatCard label="Total agents" value="14" delta={4.2} spark={spark(1)} />
+        <StatCard label="Built & Deployed" value="9" delta={5.5} spark={spark(2)} />
+        <StatCard label="Not Built (In Dev)" value="5" delta={-1.8} spark={spark(3)} />
+        <StatCard label="Total spend" value="$105.48" delta={8.3} spark={spark(4)} />
       </div>
       <AgentsList />
     </DashboardShell>
